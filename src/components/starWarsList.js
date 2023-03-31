@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { DataContext } from '../App';
 
 import StarWarsItem from './starWarsItem';
 import { useStarWarsState } from '../starWarDataService/startWarState';
 
 
 const StarWarList = props => {
-    const { starWars, isLoadingStarWars, ...actions } = useStarWarsState();
+    const { starWars, isLoadingStarWars, ...actions } = useContext(DataContext);
 
    return (
     <>
