@@ -3,47 +3,21 @@ import starWarService from './starWarService';
 
 export function useStarWarsState(){
 
-    const startWarsState = [];
+    const startWarsState = null;
     const [starWars, setStarWars] = useState(startWarsState)
     const [isLoadingStarWars, setisLoadingStarWars] = useState(true);
-    const [showStarWarDetails, setShowStarWarDetails] = useState(false);
 
-    const toggleStarWarDetails = () => setShowStarWarDetails(!showStarWarDetails);
-
-    const getPilote = async url =>  {
-       const pilot = localStorage.getItem(url);
-       if(pilot) return JSON.parse(pilot);
-         try{
-            const pilot =  await starWarService.fetchPilot(url);
-            localStorage.setItem(url,JSON.stringify(pilot));
-            return pilot;
-         }catch(e){
-            console.log(e);
-         }
-    }
+    const getPilote = url => starWarService.fetchPilot(url);
+    const getStarWars = async () => {
+        if(starWars) return;
+         const starShips =  await starWarService.fetchStarWars();
+         setStarWars(starShips);
+         setisLoadingStarWars(false);
+     }
 
     useEffect(()=> {
-        const state = localStorage.getItem('starWars');
-        if(state){
-            setStarWars(JSON.parse(state));
-            setisLoadingStarWars(false)
-            return;
-        }
-        
-        const getStarWars = async () => {
-           const starWars =  await starWarService.fetchStarWars();
-           localStorage.setItem('starWars',JSON.stringify(starWars.results));
-            setStarWars(starWars.results);
-            setisLoadingStarWars(false);
-        }
-
-        try {
-            getStarWars();
-        } catch(e){
-            console.log('Will manage this soon');
-            setisLoadingStarWars(false)
-        }
-      
+        getStarWars();
+        return ()=> starWarService.clean();
     },[])
 
     return {
@@ -51,8 +25,6 @@ export function useStarWarsState(){
         setStarWars,
         isLoadingStarWars,
         setisLoadingStarWars,
-        showStarWarDetails,
-        toggleStarWarDetails,
         getPilote
     }
 }

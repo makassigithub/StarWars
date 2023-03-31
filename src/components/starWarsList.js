@@ -13,7 +13,7 @@ const StarWarList = props => {
      <div> Loading....</div> :
       starWars.map(item => 
         <StarWarsItem 
-            key={item.name} 
+            key={item.Name} 
             starWar={item}
             {...actions}
         /> )

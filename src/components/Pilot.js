@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 import AccordionDetails from '@mui/material/AccordionDetails';
+import starWarService from "../starWarDataService/starWarService";
 
 import { useStarWarsState } from '../starWarDataService/startWarState';
 import StarWarItemDetails from "./starWarItemDetails";
 
 const Pilot = () => {
     const {state} = useLocation();
-    const { getPilote } = useStarWarsState();
     const [pilot, setPilot] = useState({});
     const [loading, setLoading] = useState(true);
     const [failedLoading, setFailedLoading] = useState(false);
@@ -15,7 +15,7 @@ const Pilot = () => {
     useEffect(()=>{
         (async () => {
             try{
-                const pilot = await getPilote(state.pilot);
+                const pilot = await starWarService.fetchPilot(state.pilot);
                 setPilot(pilot);
                 setLoading(false)
             }catch(e){
@@ -24,9 +24,7 @@ const Pilot = () => {
             }
         })()
     },[]); 
-
-    //const fieldsToShow = Object.keys(pilot).filter(key=> typeof pilot[key] ==='string');
-    
+  
     return  <AccordionDetails>
                 {
                 loading ? 'Loading...':

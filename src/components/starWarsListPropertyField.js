@@ -6,20 +6,22 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
 
-const StarWarsItemPilotList = ({pilots}) => {
+import { keyMatches } from '../utils/titlize';
+
+const StarWarsListPropertyField = ({fieldKey, fieldValues}) => {
 
 const navigate = useNavigate();
 
  return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
     {
-         pilots.map((pilot,index)=> 
-            <ListItemButton key={`${pilot.name}-${index}`} onClick={()=>navigate(`/pilots/${index+1}`,{state:{pilot}}) }>
+         fieldValues.map((field,index)=> 
+            <ListItemButton key={`${field.name}-${index}`} onClick={()=>navigate(`/pilots/${index+1}`,{state:{pilot:field}}) }>
                 <ListItemAvatar>
-                    <Avatar alt={`${pilot.name}`} src="pilot-avatar-icon.webp" />
+                    <Avatar alt={`${field.name}`} src="pilot-avatar-icon.webp" />
                 </ListItemAvatar>
                 <ListItemText
-                    primary={`Pilot ${index+1}`}
+                    primary={`${keyMatches[fieldKey] || 'Item'} ${index+1}`}
                 />
             </ListItemButton>)
     }
@@ -29,4 +31,4 @@ const navigate = useNavigate();
 }
 
 
-export default StarWarsItemPilotList;
+export default StarWarsListPropertyField;

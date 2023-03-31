@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import StarWarItemDetails from './starWarItemDetails';
-import StarWarsItemPilotList from './starWarsItemPilotList';
+import StarWarsItemPilotList from './starWarsListPropertyField';
 //import './components.css'
 
 
@@ -27,7 +27,7 @@ const StarWarsItem = props => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                <Typography>{rest.name}</Typography>
+                <Typography>{rest.Name}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <StarWarItemDetails
