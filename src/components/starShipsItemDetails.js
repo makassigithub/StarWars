@@ -3,10 +3,9 @@ import React from 'react';
 import StarWarsListPropertyField from './starWarsListPropertyField';
 import './components.css';
 
-const StarWarItemDetails = ({listObject}) => {
+const StarShipsItemDetails = ({listObject}) => {
     const stringValues = Object.keys(listObject).filter(key=> typeof listObject[key] ==='string');
-    const arrayValues = Object.keys(listObject).filter(key=> Array.isArray(listObject[key]) && listObject[key].length);
-
+    const arrayValues = Object.keys(listObject).filter(key=> Array.isArray(listObject[key]) && listObject[key].length> 0);
 
     return (
         <table>
@@ -19,9 +18,9 @@ const StarWarItemDetails = ({listObject}) => {
                     
                 ))}
                 {arrayValues.map(record_key => (
-                    <tr id='array-list' key={record_key}>
+                    <tr key={record_key}>
                         <td>{record_key}</td>
-                        <td>
+                        <td id="array-items">
                             <StarWarsListPropertyField 
                                 fieldValues={listObject[record_key]}
                                 fieldKey={record_key}
@@ -36,5 +35,5 @@ const StarWarItemDetails = ({listObject}) => {
 }
 
 
-export default StarWarItemDetails;
+export default StarShipsItemDetails;
 

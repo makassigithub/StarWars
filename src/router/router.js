@@ -2,9 +2,9 @@ import {
     createBrowserRouter,
   } from "react-router-dom";
 
-  import StarWarList from "../components/starWarsList";
-  import Pilot from "../components/Pilot";
-  import ErrorPage from "../components/ErrorPage";
+  import StarWarList from "../components/starShipsList";
+  import Detail from "../components/common/Detail";
+  import ErrorPage from "../components/common/ErrorPage";
 
   const router = createBrowserRouter([
     {
@@ -14,8 +14,8 @@ import {
       children:[]
     },
     {
-      path: "pilots/:pilotId",
-      element: <Pilot />,
+      path: "details/:detailId",
+      element: <Detail />,
     },
   ]);
 

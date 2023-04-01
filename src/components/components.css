@@ -1,7 +1,5 @@
-.star-fields {
-    display: flex;
-    margin: 25px 0;
-    border: 1px solid red
+.list-content {
+  /* background-color: brown;  */
 }
 
 table {
@@ -10,12 +8,32 @@ table {
     width: 100%;
   }
   
-  td, th {
-    border: 1px solid #dddddd;
+  td {
+    border: .5px dashed #dddddd; 
     text-align: left;
     padding: 8px;
+    background-color:#000;
+    color:#a9a39f
   }
   
   tr:nth-child(even) {
     background-color: #dddddd;
+  }
+
+
+.accordion-title{
+  color: #0089c7;
+  font-weight: 400;
+  font-size: 2.6rem;
 }
+
+#array-items > .css-1r5wa48-MuiList-root {
+  max-width: 100% !important;
+  flex-wrap: wrap;
+}
+
+.item-details{
+  background-color: #262626;
+  border-radius: 4px;
+}
+

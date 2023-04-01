@@ -1,15 +1,16 @@
 import React, {useContext} from 'react';
 import { DataContext } from '../App';
 
-import StarWarsItem from './starWarsItem';
-import { useStarWarsState } from '../starWarDataService/startWarState';
+import StarWarsItem from './starShipsItem';
 
 
-const StarWarList = props => {
+
+const StarShipsList = props => {
     const { starWars, isLoadingStarWars, ...actions } = useContext(DataContext);
 
    return (
     <>
+    <h1> Start War Starships</h1>
     { isLoadingStarWars ?
      <div> Loading....</div> :
       starWars.map(item => 
@@ -25,4 +26,4 @@ const StarWarList = props => {
 
 
 
-export default StarWarList;
+export default StarShipsList;

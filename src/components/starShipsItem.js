@@ -5,29 +5,30 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import StarWarItemDetails from './starWarItemDetails';
-import StarWarsItemPilotList from './starWarsListPropertyField';
-//import './components.css'
+import StarWarItemDetails from './starShipsItemDetails';
+import './components.css'
 
 
 
-const StarWarsItem = props => {
+const StarShipsItem = props => {
     const { 
         starWar
     } = props;
 
     const { films, ...rest} = starWar;
-    //const fieldsToShow = Object.keys(rest).filter(key=> typeof starWar[key] ==='string');
 
     return (
-        <div>
-            <Accordion>
+        <div className='list-content'>
+            <Accordion
+                TransitionProps={{ unmountOnExit: true }}
+                style={{backgroundColor:'#262626'}}
+            >
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                <Typography>{rest.Name}</Typography>
+                <Typography className='accordion-title'>{rest.Name}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <StarWarItemDetails
@@ -39,4 +40,4 @@ const StarWarsItem = props => {
     )
 }
 
-export default StarWarsItem;
+export default StarShipsItem;

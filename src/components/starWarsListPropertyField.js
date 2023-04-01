@@ -1,29 +1,48 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 import List from '@mui/material/List';
-import Avatar from '@mui/material/Avatar';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
+
 
 import { keyMatches } from '../utils/titlize';
+import './components.css';
+
+const buttonStyle = 
+    {
+        width: 200,
+        marginRight: 2,
+        backgroundColor:'transparent',
+        border: 1,
+        borderColor: '#a9a39f',
+        color:'#0089c7',
+        alignSelf:'flex-end',
+        marginY: 1,
+        '&:hover': {
+            backgroundColor:'#ff7a18',
+            color:'#fff',
+        }
+
+      }
 
 const StarWarsListPropertyField = ({fieldKey, fieldValues}) => {
 
 const navigate = useNavigate();
 
  return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <List sx={{ width: '100%', maxWidth: 360 }}>
     {
          fieldValues.map((field,index)=> 
-            <ListItemButton key={`${field.name}-${index}`} onClick={()=>navigate(`/pilots/${index+1}`,{state:{pilot:field}}) }>
-                <ListItemAvatar>
-                    <Avatar alt={`${field.name}`} src="pilot-avatar-icon.webp" />
-                </ListItemAvatar>
-                <ListItemText
-                    primary={`${keyMatches[fieldKey] || 'Item'} ${index+1}`}
-                />
-            </ListItemButton>)
+         <Button
+            variant="contained"
+            sx={buttonStyle}
+            endIcon={<SendIcon />}
+            key={`${field.name}-${index}`} 
+            onClick={()=>navigate(`/details/${index+1}`,{state:{nextDetailUrl:field}})}
+         >
+           {`${keyMatches[fieldKey] || 'Item'} ${index+1}`}
+         </Button>
+        )
     }
     </List>
  )  

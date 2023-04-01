@@ -1,9 +1,19 @@
+html {
+ max-width: 1600px;
+  gap: 3rem;
+  color: #fff;
+  overflow-x: hidden;
+  background-color: #000;
+  background-size: 120% 2000px,100% 2000px;
+}
+
+
 .App {
   text-align: center;
-  background-color: #eaeded;
   display: flex;
   flex-direction: column;
-  padding:25px 50px;
+  padding:25px 200px;
+  background-repeat: no-repeat;
 }
 
 .App-header {
@@ -17,7 +27,14 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1{
+  font-family: "Segoe UI",Arial,sans-serif;
+  font-weight: 400;
+  color: #ff7a18;
+  background-color: #262626;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
 }
-

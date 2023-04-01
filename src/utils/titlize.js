@@ -37,3 +37,7 @@ export const keyMatches = {
     Planets:'Planet'
 }
 
+export function getPageTite(url){
+    const parts = url.split('/');
+    return `${titlize(parts[4])} ${parts[5]}' s Details`
+}
