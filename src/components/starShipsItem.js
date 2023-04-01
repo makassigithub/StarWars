@@ -21,7 +21,11 @@ const StarShipsItem = (props) => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-        >
+          sx={{
+            "&:hover": {
+              backgroundColor: "rgb(255,255,255,0.9)",
+            },
+          }}>
           <Typography className="accordion-title">{rest.Name}</Typography>
         </AccordionSummary>
         <AccordionDetails>

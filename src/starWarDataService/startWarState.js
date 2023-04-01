@@ -6,8 +6,6 @@ export function useStarWarsState() {
   const [isLoadingStarWars, setisLoadingStarWars] = useState(true);
   const [isStarShipFailure, setIsStarShipFailure] = useState(false);
 
-  const getPilote = (url) => starWarService.fetchPilot(url);
-
   const getStarWars = async () => {
     try {
       const starShips = await starWarService.fetchStarWars();
@@ -29,6 +27,5 @@ export function useStarWarsState() {
     isLoadingStarWars,
     setisLoadingStarWars,
     isStarShipFailure,
-    getPilote,
   };
 }
