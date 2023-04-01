@@ -32,6 +32,7 @@ export const keyMatches = {
   Vehicles: "Vehicle",
   Starships: "Starship",
   Planets: "Planet",
+  People: "People",
 };
 
 export function getPageTite(url) {
