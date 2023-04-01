@@ -15,6 +15,7 @@ export function useStarWarsState(){
             setStarWars(starShips);
             setisLoadingStarWars(false);
         }catch(e){
+            setisLoadingStarWars(false);
             setIsStarShipFailure(true);
         }
     }
@@ -29,6 +30,6 @@ export function useStarWarsState(){
         isLoadingStarWars,
         setisLoadingStarWars,
         isStarShipFailure,
-        getPilote
+        getPilote,
     }
 }

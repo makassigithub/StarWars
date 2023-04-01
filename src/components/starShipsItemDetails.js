@@ -11,8 +11,8 @@ const StarShipsItemDetails = ({listObject}) => {
         <table>
             <tbody>
                 {stringValues.map((record_key) => (
-                    <tr  key={record_key}>
-                        <td>{record_key}</td>
+                    <tr key={record_key}>
+                        <td  className="fields" >{record_key}</td>
                         <td>{listObject[record_key]}</td>
                     </tr>
                     
@@ -20,7 +20,7 @@ const StarShipsItemDetails = ({listObject}) => {
                 {arrayValues.map(record_key => (
                     <tr key={record_key}>
                         <td>{record_key}</td>
-                        <td id="array-items">
+                        <td className="array-items">
                             <StarWarsListPropertyField 
                                 fieldValues={listObject[record_key]}
                                 fieldKey={record_key}

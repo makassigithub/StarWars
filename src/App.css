@@ -38,3 +38,9 @@ h1{
   align-items: center;
   border-radius: 4px;
 }
+
+hr {
+  width: 100%;
+  border: 1.5px dashed #ff7a18;
+  margin-top: 10px;
+}

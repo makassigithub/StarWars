@@ -3,8 +3,8 @@ import {
   } from "react-router-dom";
 
   import StarWarList from "../components/starShipsList";
-  import Detail from "../components/common/Detail";
-  import ErrorPage from "../components/common/ErrorPage";
+  import Detail from "../components/common/detail";
+  import ErrorPage from "../components/ErrorPage";
 
   const router = createBrowserRouter([
     {

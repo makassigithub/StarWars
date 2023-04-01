@@ -10,27 +10,14 @@ class StarWarService {
     service = axios.create({ baseURL: 'https://swapi.dev/api/' });
 
     async fetchStarWars (){
-        let data = null;
-            try{
-                let starShips = (await this.service.get('starships')).data;
-                const formated = starShips.results.map(obj=> formatObject(obj));
-                data = formated;
-            } catch(e) {
-                console.log(e);
-            }
-       return  data;
+        let starShips = (await this.service.get('starships')).data;
+        const formated = starShips.results.map(obj=> formatObject(obj));
+        return formated;
     }
 
     async fetchPilot(url) {
-        let data = null;
-            try {
-                const item =  (await axios.get(url)).data;
-                const formated = formatObject(item);
-               data = formated;
-            }catch(e){
-              console.log(e);
-            }
-        return data;
+        const item =  (await axios.get(url)).data;
+        return formatObject(item);
     }
 }
 const starWarService = new StarWarService();

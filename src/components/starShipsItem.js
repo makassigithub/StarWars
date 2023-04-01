@@ -11,11 +11,7 @@ import './components.css'
 
 
 const StarShipsItem = props => {
-    const { 
-        starWar
-    } = props;
-
-    const { films, ...rest} = starWar;
+    const { films, ...rest} = props.starWar;
 
     return (
         <div className='list-content'>
@@ -32,7 +28,7 @@ const StarShipsItem = props => {
                 </AccordionSummary>
                 <AccordionDetails>
                     <StarWarItemDetails
-                        listObject={starWar}
+                        listObject={props.starWar}
                     />
                 </AccordionDetails>
             </Accordion> 

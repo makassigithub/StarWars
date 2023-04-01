@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import starWarService from "../../starWarDataService/starWarService";
-import { keyMatches, getPageTite } from "../../utils/titlize";
+import { getPageTite } from "../../utils/titlize";
 
 import StarWarItemDetails from "../starShipsItemDetails";
+import { ErrorFrame } from "./errorFrame";
 
 const Detail = () => {
     const {state} = useLocation();
@@ -21,6 +22,7 @@ const Detail = () => {
             }catch(e){
                 console.log(e);
                 setFailedLoading(true)
+                setLoading(false) 
             }
         })()
     },[state.nextDetailUrl]); 
@@ -31,7 +33,7 @@ const Detail = () => {
                 <AccordionDetails>
                     {
                     loading ? 'Loading...':
-                    failedLoading ?  'Failed to fetch the pilot...':
+                    failedLoading ? <ErrorFrame message='Ooops! Failed to fetch the Detail...'/>:
                         <StarWarItemDetails
                             listObject={nextItem}
                         />
