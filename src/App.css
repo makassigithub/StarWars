@@ -5,6 +5,7 @@ html {
   overflow-x: hidden;
   background-color: #000;
   background-size: 120% 2000px, 100% 2000px;
+  margin: 0 auto;
 }
 
 .app {
@@ -13,6 +14,11 @@ html {
   flex-direction: column;
   padding: 25px 200px;
   background-repeat: no-repeat;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
 h1 {
@@ -29,6 +35,72 @@ h1 {
 
 hr {
   width: 100%;
-  border: 1.5px dashed #ff7a18;
+  border: 1.5px solid #ff7a18;
   margin-top: 10px;
+}
+
+tr {
+  border: 1px solid #3c3b3b;
+}
+td {
+  border: 1px solid #3c3b3b;
+  border: 0.5px dashed #dddddd;
+  text-align: left;
+  padding: 8px;
+  background-color: #000;
+  color: #a9a39f;
+}
+
+.list-content {
+  margin-bottom: 4px;
+}
+
+.accordion-title {
+  color: #0089c7;
+  font-weight: 400;
+  font-size: 2.6rem;
+}
+
+.array-items > .css-1r5wa48-MuiList-root {
+  max-width: 100% !important;
+  flex-wrap: wrap;
+}
+
+.item-details {
+  background-color: #262626;
+  border-radius: 4px;
+}
+
+.fields {
+  font-weight: 600;
+}
+
+.field-values {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.error {
+  color: crimson;
+  background-color: pink;
+}
+
+#back-link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Mui style override */
+
+.css-k8yyoc-MuiButtonBase-root-MuiButton-root {
+  /*  background-color: transparent;
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Arial;
+  color: #ffffff !important;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: 0px solid !important; */
 }

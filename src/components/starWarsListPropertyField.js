@@ -7,7 +7,6 @@ import SendIcon from "@mui/icons-material/Send";
 import List from "@mui/material/List";
 
 import { keyMatches } from "../utils/titlize";
-import "./components.css";
 
 const buttonStyle = {
   width: 200,
@@ -19,8 +18,8 @@ const buttonStyle = {
   alignSelf: "flex-end",
   marginY: 1,
   "&:hover": {
-    backgroundColor: "#ff7a18",
-    color: "#fff",
+    backgroundColor: "transparent",
+    color: "#ff7a18",
   },
 };
 
@@ -39,8 +38,7 @@ const StarWarsListPropertyField = ({ fieldKey, fieldValues }) => {
             navigate(`/details/${index + 1}`, {
               state: { nextDetailUrl: field },
             })
-          }
-        >
+          }>
           {`${keyMatches[fieldKey] || "Item"} ${index + 1}`}
         </Button>
       ))}

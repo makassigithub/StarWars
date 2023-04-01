@@ -3,7 +3,6 @@
 import React from "react";
 
 import StarWarsListPropertyField from "./starWarsListPropertyField";
-import "./components.css";
 
 const StarShipsItemDetails = ({ listObject }) => {
   const stringValues = Object.keys(listObject).filter((key) => typeof listObject[key] === "string");
