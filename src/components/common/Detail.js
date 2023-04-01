@@ -31,7 +31,7 @@ const Detail = () => {
     <>
       <span id="back-link">
         <Link to="/" underline="hover">
-          Back to home page
+          Back to Star ships
         </Link>
       </span>
       <h1>{`${getPageTite(state.nextDetailUrl)}`}</h1>

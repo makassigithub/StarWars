@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import starWarService from "./starWarService";
 
 export function useStarWarsState() {
-  const startWarsState = null;
-  const [starWars, setStarWars] = useState(startWarsState);
+  const [starWars, setStarWars] = useState(null);
   const [isLoadingStarWars, setisLoadingStarWars] = useState(true);
   const [isStarShipFailure, setIsStarShipFailure] = useState(false);
 
   const getPilote = (url) => starWarService.fetchPilot(url);
+
   const getStarWars = async () => {
     try {
       const starShips = await starWarService.fetchStarWars();

@@ -10,7 +10,7 @@ export const DataContext = createContext();
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <DataContext.Provider value={{ ...useStarWarsState() }}>
         <RouterProvider router={router} />
       </DataContext.Provider>
