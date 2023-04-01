@@ -25,7 +25,8 @@ const StarShipsItem = (props) => {
             "&:hover": {
               backgroundColor: "rgb(255,255,255,0.9)",
             },
-          }}>
+          }}
+        >
           <Typography className="accordion-title">{rest.Name}</Typography>
         </AccordionSummary>
         <AccordionDetails>
