@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import starWarService from "../../starWarDataService/starWarService";
 import { getPageTite } from "../../utils/titlize";
@@ -29,6 +29,11 @@ const Detail = () => {
 
   return (
     <>
+      <span id="back-link">
+        <Link to="/" underline="hover">
+          Back to home page
+        </Link>
+      </span>
       <h1>{`${getPageTite(state.nextDetailUrl)}`}</h1>
       <div className="item-details">
         <AccordionDetails>

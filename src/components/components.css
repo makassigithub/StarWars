@@ -41,3 +41,8 @@ td {
   color: crimson;
   background-color: pink;
 }
+
+#back-link {
+  display: flex;
+  justify-content: flex-end;
+}
