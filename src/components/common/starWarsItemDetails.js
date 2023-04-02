@@ -2,9 +2,9 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-import StarWarsListPropertyField from "./starWarsListPropertyField";
+import StarWarsListPropertyField from "../starWarsListPropertyField";
 
-const StarShipsItemDetails = ({ listObject }) => {
+const StarWarItemDetails = ({ listObject }) => {
   const stringValues = Object.keys(listObject).filter((key) => typeof listObject[key] === "string");
   const arrayValues = Object.keys(listObject).filter(
     (key) => Array.isArray(listObject[key]) && listObject[key].length > 0
@@ -35,4 +35,4 @@ const StarShipsItemDetails = ({ listObject }) => {
   );
 };
 
-export default StarShipsItemDetails;
+export default StarWarItemDetails;

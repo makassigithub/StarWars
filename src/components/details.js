@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import starWarService from "../../starWarDataService/starWarService";
-import { getPageTite } from "../../utils/titlize";
+import starWarService from "../starWarDataService/starWarService";
+import { getPageTite } from "../utils/titlize";
 
-import StarWarItemDetails from "../starShipsItemDetails";
-import { ErrorFrame } from "./errorFrame";
+import StarWarItemDetails from "./common/starWarsItemDetails";
+import { ErrorFrame } from "./common/errorFrame";
 
 const Detail = () => {
   const { state } = useLocation();

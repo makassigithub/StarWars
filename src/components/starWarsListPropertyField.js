@@ -38,7 +38,8 @@ const StarWarsListPropertyField = ({ fieldKey, fieldValues }) => {
             navigate(`/details/${index + 1}`, {
               state: { nextDetailUrl: field },
             })
-          }>
+          }
+        >
           {`${keyMatches[fieldKey] || "Item"} ${index + 1}`}
         </Button>
       ))}

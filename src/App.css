@@ -89,18 +89,3 @@ td {
   display: flex;
   justify-content: flex-end;
 }
-
-/* Mui style override */
-
-.css-k8yyoc-MuiButtonBase-root-MuiButton-root {
-  /*  background-color: transparent;
-  -webkit-border-radius: 6;
-  -moz-border-radius: 6;
-  border-radius: 6px;
-  font-family: Arial;
-  color: #ffffff !important;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  border: 0px solid !important; */
-}

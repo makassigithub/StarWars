@@ -7,7 +7,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import StarWarItemDetails from "./starShipsItemDetails";
+import StarWarItemDetails from "./common/starWarsItemDetails";
 
 const StarShipsItem = (props) => {
   // eslint-disable-next-line react/prop-types, no-unused-vars
@@ -24,7 +24,8 @@ const StarShipsItem = (props) => {
             "&:hover": {
               backgroundColor: "rgb(255,255,255,0.9)",
             },
-          }}>
+          }}
+        >
           <Typography className="accordion-title">{rest.Name}</Typography>
         </AccordionSummary>
         <AccordionDetails>
