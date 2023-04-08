@@ -12,7 +12,7 @@ class StarWarService {
     return formated;
   }
 
-  async fetchPilot(url) {
+  async fetchNextDetailObject(url) {
     const item = (await axios.get(url)).data;
     return formatObject(item);
   }
