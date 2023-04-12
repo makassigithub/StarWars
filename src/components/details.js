@@ -19,7 +19,7 @@ const Detail = () => {
           Back to Star ships
         </Link>
       </span>
-      {<h1>{`${detailObject.Name || detailObject.Title}`}</h1>}
+      {<h1>{`${detailObject.Name || detailObject.Title || `Loading...`}`}</h1>}
       <div className="item-details">
         <StarWarItemDetails listObject={detailObject} />
       </div>
